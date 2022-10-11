@@ -103,13 +103,14 @@ const selectProduct = async (products, userSlug) => {
 }
 
 const showProduct = async product => {
-  console.group(product.slug.slugTheme)
+  const title = ((product.slug).replaceAll('-', ' ')).toUpperCase()
+  console.group(title.slugTheme)
 
   console.log(product.title)
   console.log('')
 
   for (const model of product.models) {
-    console.groupCollapsed(model.modelName.modelTheme)
+    console.groupCollapsed(model.sku.modelTheme)
 
     if (myArguments[0] === 'img') {
       const data = await getDataBuffer(model.imageURL)

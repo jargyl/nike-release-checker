@@ -9,7 +9,7 @@ export const formateData = data => {
 
     for (const product of release.productInfo) {
       const model = {
-        modelName: product.merchProduct.labelName,
+        sku: product.merchProduct.styleColor,
         id: product.merchProduct.id,
         imageURL: product.imageUrls.productImageUrl,
         sizes: [],
